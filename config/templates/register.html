@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | Diwali App</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            margin: 0;
+
+            font-family: Arial, sans-serif;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background: linear-gradient(
+                135deg,
+                #ff9933,
+                #ff512f,
+                #8e2de2
+            );
+
+        }
+
+        .container {
+
+            width: 380px;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+        }
+
+        h2 {
+
+            text-align: center;
+
+            color: #ff512f;
+
+            margin-bottom: 25px;
+
+        }
+
+        input {
+
+            width: 100%;
+
+            padding: 13px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 8px;
+
+            font-size: 15px;
+
+        }
+
+        button {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #ff512f;
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+        }
+
+        button:hover {
+
+            background: #e8432d;
+
+        }
+
+        p {
+
+            text-align: center;
+
+        }
+
+        a {
+
+            color: #ff512f;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+        }
+
+        .message {
+
+            color: red;
+
+            text-align: center;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+    <h2>🪔 Create Account</h2>
+
+
+    {% if messages %}
+
+        {% for message in messages %}
+
+            <p class="message">
+
+                {{ message }}
+
+            </p>
+
+        {% endfor %}
+
+    {% endif %}
+
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+
+        <input
+            type="text"
+            name="username"
+            placeholder="Enter Username"
+            required
+        >
+
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+            required
+        >
+
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            required
+        >
+
+
+        <button type="submit">
+
+            Register
+
+        </button>
+
+
+    </form>
+
+
+    <p>
+
+        Already have an account?
+
+        <a href="/login/">
+
+            Login
+
+        </a>
+
+    </p>
+
+
+</div>
+
+
+</body>
+
+</html>

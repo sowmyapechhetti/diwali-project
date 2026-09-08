@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Diwali</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #120458,
+                #3b0a45,
+                #ff6b00
+            );
+
+            color: white;
+
+            overflow: hidden;
+
+        }
+
+
+        .container {
+
+            text-align: center;
+
+            padding: 50px;
+
+        }
+
+
+        .diya {
+
+            font-size: 100px;
+
+            animation: glow 2s infinite alternate;
+
+        }
+
+
+        h1 {
+
+            font-size: 65px;
+
+            margin: 15px;
+
+            text-shadow:
+                0 0 10px #ffd700,
+                0 0 20px #ff8c00;
+
+        }
+
+
+        h2 {
+
+            font-size: 25px;
+
+            font-weight: normal;
+
+        }
+
+
+        p {
+
+            font-size: 20px;
+
+            max-width: 700px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .logout {
+
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 12px 30px;
+
+            background: white;
+
+            color: #ff512f;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+        }
+
+
+        @keyframes glow {
+
+            from {
+
+                transform: scale(1);
+
+                filter: drop-shadow(
+                    0 0 5px orange
+                );
+
+            }
+
+
+            to {
+
+                transform: scale(1.15);
+
+                filter: drop-shadow(
+                    0 0 25px yellow
+                );
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <div class="diya">
+
+        🪔
+
+    </div>
+
+
+    <h1>
+
+        Happy Diwali!
+
+    </h1>
+
+
+    <h2>
+
+        Welcome, {{ request.user.username }} 🎉
+
+    </h2>
+
+
+    <p>
+
+        May the festival of lights bring happiness,
+        prosperity, success and endless joy to your life.
+
+        Wishing you and your family a very
+        Happy Diwali! ✨
+
+    </p>
+
+
+    <a class="logout" href="/logout/">
+
+        Logout
+
+    </a>
+
+
+</div>
+
+
+</body>
+
+</html>
